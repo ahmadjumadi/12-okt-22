@@ -14,7 +14,8 @@
         /* 
             Soal No 1 
             Looping I Love PHP
-            Lakukan Perulangan (boleh for/while/do while) sebanyak 20 iterasi. Looping terbagi menjadi dua: Looping yang pertama Ascending (meningkat) 
+            Lakukan Perulangan (boleh for/while/do while) sebanyak 20 iterasi. 
+            Looping terbagi menjadi dua: Looping yang pertama Ascending (meningkat) 
             dan Looping yang ke dua menurun (Descending). 
 
             Output: 
@@ -41,32 +42,71 @@
             4 - I Love PHP
             2 - I Love PHP
         */
+        echo "<strong>Ini looping pake for ascending</strong> <br>";
+
         // Lakukan Looping Di Sini
+        for($i=2;$i<=20;$i+=2) {
+            echo $i . " - I Love PHP" . "<br>";
+        }
+        echo "<strong>Ini looping pake for descending</strong> <br>";
+
+        for($i=20;$i>=2;$i-=2) {
+            echo $i . " - I Love PHP" . "<br>";
+        }
+
+        echo "<strong>Ini looping pake while ascending</strong> <br>";
+        $x = 2;
+        while ($x <= 20 )
+        {
+            echo $x . " - I Love PHP" . "<br>";
+            $x+=2;
+        }
+
+        echo "<strong>Ini looping pake while descending</strong> <br>";
+        $x = 20;
+        while ($x >= 2 )
+        {
+            echo $x . " - I Love PHP" . "<br>";
+            $x-=2;
+        }
+
+
 
 
         echo "<h3>Soal No 2 Looping Array Modulo </h3>";
         /* 
             Soal No 2
             Looping Array Module
-            Carilah sisa bagi dengan angka 5 dari setiap angka pada array berikut.
+            Carilah sisa bagi dengan angka 5 dari setiap angka pada 
+            array berikut.
             Tampung ke dalam array baru bernama $rest 
         */
 
         $numbers = [18, 45, 29, 61, 47, 34];
         echo "array numbers: ";
         print_r($numbers);
+        echo "<br>";
         // Lakukan Looping di sini
+        // Tampung ke dalam array baru bernama $rest
+
+        foreach ($numbers as $value)
+        {
+            $rest[] = $value % 5;
+        } 
 
         echo "<br>";
         echo "Array sisa baginya adalah:  "; 
+        print_r($rest);
         echo "<br>";
 
         echo "<h3> Soal No 3 Looping Asociative Array </h3>";
         /* 
             Soal No 3
             Loop Associative Array
-            Terdapat data items dalam bentuk array dimensi. Buatlah data tersebut ke dalam bentuk Array Asosiatif. 
-            Setiap item memiliki key yaitu : id, name, price, description, source. 
+            Terdapat data items dalam bentuk array dimensi. 
+            Buatlah data tersebut ke dalam bentuk Array Asosiatif. 
+            Setiap item memiliki key yaitu : 
+            id, name, price, description, source. 
             
             Output: 
             Array ( [id] => 001 [name] => Keyboard Logitek [price] => 60000 [description] => Keyboard yang mantap untuk kantoran [source] => logitek.jpeg ) 
@@ -83,12 +123,26 @@
         ];
         
         // Output: 
+        foreach ($items as $value)
+        {
+            $array = 
+            [
+                'id' => $value[0],
+                'name' => $value[1],
+                'price' => $value[2],
+                'description' => $value[3],
+                'source' => $value[4]
+            ];
+            print_r ($array);
+            echo "<br>";
+        }
         
         echo "<h3>Soal No 4 Asterix </h3>";
         /* 
             Soal No 4
             Asterix 5x5
-            Tampilkan dengan looping dan echo agar menghasilkan kumpulan bintang dengan pola seperti berikut: 
+            Tampilkan dengan looping dan echo agar menghasilkan 
+            kumpulan bintang dengan pola seperti berikut: 
             Output: 
             * 
             * * 
@@ -97,7 +151,16 @@
             * * * * *
         */
         echo "Asterix: ";
-        echo "<br>";        
+        echo "<br>";  
+        $star = 5;
+        for ($a = $star; $a>0 ;$a--)
+        {
+            for ($b = $star; $b>=$a; $b--)
+            {
+                echo "*.";
+            }
+            echo "<br>";
+        }
     ?>
 
 </body>
